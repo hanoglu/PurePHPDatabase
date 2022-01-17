@@ -45,7 +45,6 @@ localhost:8000/db.php?db=DB_NAME&passwd=YOUR_PASSWORD&method=addName&p1=CONTROLN
 localhost:8000/db.php?db=DB_NAME&passwd=YOUR_PASSWORD&method=addName&p1=CONTROLNAME
 
 localhost:8000/db.php?db=DB_NAME&passwd=YOUR_PASSWORD&method=getAllDatabase
-
 ```
 If output seems like;
 ```
