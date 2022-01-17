@@ -56,4 +56,6 @@ It's OK, if not you should set $MARGIN_LEFT and $MARGIN_RIGHT. Additionally DB_N
 ```
 
 ## Safety Notes
-This project licensed under GPL v2 and does not offer any safety guarantee.
+This project licensed under GPL v2 and does not offer any safety guarantee.<br>
+All data is stored in the PHP files, be sure nobody can get access .php files remotely, it should be like that by default in PHP server.<br>
+You should change default password at the beginning of db.php file. It should be 'admin' by default.
