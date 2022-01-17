@@ -28,10 +28,10 @@ header('Content-Type: text/html; charset=utf-8');
 // LEFT AND RIGHT MARGINS SHOULD BE CHANGED IF NECESSARY
 $PASSWORD = "admin";
 $MARGIN_LEFT = 13;
-$MARGIN_RIGHT = 4;
+$MARGIN_RIGHT = 5;
 // ***********************************************************************************************
 
-$data_basenin_adi = $_GET["db"];
+$data_basenin_adi = $_GET["db"].".php";
 $method = $_GET["method"];
 $p1 = $_GET["p1"];
 $p2 = $_GET["p2"];
@@ -145,6 +145,7 @@ function updateConnection(){
 
 	// $this->Data = fread($this->Database_File,filesize($this->Database_Name));
     $this->Data = fgets($this->Database_File);
+
 	fclose($this->Database_File);
 	
 	$this->Database_Update_Parameter = $this->fileSystemGetUnique();
@@ -170,7 +171,7 @@ function getAllDatabase(){
 	return $data;
 }
 function configureDatabase(){
-	
+	global $MARGIN_LEFT, $MARGIN_RIGHT;
     // Paddings ang margins should be configured
     $notar = substr($this->Data, $MARGIN_LEFT, -$MARGIN_RIGHT);
 	$nameanddata = explode("#",$notar);
@@ -533,7 +534,7 @@ function saveDatabase(){
 	$myfile = fopen($this->Database_Name, "w") or die("Unable to open file!");
 	$txt = '<?php $data="';
 	$ilk = 0;
-	for($i=0;$i<count($this->Data_Posterior);$i++){
+	for($i=0;$i<count($this->Data_Posterior)+1;$i++){ // Other Margin +1
 		if($i == $ilk){
 			if($this->Data_Posterior[$i] === "#Deleted Name#"){
 				$ilk++;continue;
