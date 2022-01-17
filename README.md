@@ -33,7 +33,28 @@ getAllDatabase : Prints all names and corresponding datas of DB.
 ```
 All database functions can be shown by;
 ```
-localhost:8000/db.php?
+localhost:8000/db.php
 ```
 #### Logic of The Database
 There are names under the DB tree and datas under the names. Word 'name' corresponds the 'key' and 'data's corresponds the 'value's of this 'key'. More than one data can be identified for each name.
+
+## Important: Controlling the Margins
+In this project UTF-8 string trim made by hard coded margins. Related to PHP version or language settings(IDK) margins can change. User should set control this margins by connecting this local host URLs;
+```
+localhost:8000/db.php?db=DB_NAME&passwd=YOUR_PASSWORD&method=addName&p1=CONTROLNAME
+localhost:8000/db.php?db=DB_NAME&passwd=YOUR_PASSWORD&method=addName&p1=CONTROLNAME
+
+localhost:8000/db.php?db=DB_NAME&passwd=YOUR_PASSWORD&method=getAllDatabase
+
+```
+If output seems like;
+```
+#CONTROLNAME#
+```
+It's OK, if not you should set $MARGIN_LEFT and $MARGIN_RIGHT. Additionally DB_NAME.php file should seem like that;
+```
+<?php $data="#CONTROLNAME#";?>
+```
+
+## Safety Notes
+This project licensed under GPL v2 and does not offer any safety guarantee.
