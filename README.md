@@ -51,7 +51,7 @@ If output seems like;
 #CONTROLNAME#
 ```
 It's OK, if not you should set $MARGIN_LEFT and $MARGIN_RIGHT. Additionally DB_NAME.php file should seem like that;
-```
+```php
 <?php $data="#CONTROLNAME#";?>
 ```
 
